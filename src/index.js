@@ -1537,6 +1537,9 @@ export default function (el, config) {
     if (config.TRIGGER === 'click') {
       pointer.moved = pointer.down
     }
+    else if (config.TRIGGER === 'hover') {
+      pointer.moved = true
+    }
 
     pointer.prevTexcoordX = pointer.texcoordX
     pointer.prevTexcoordY = pointer.texcoordY
@@ -1544,9 +1547,6 @@ export default function (el, config) {
     pointer.texcoordY = 1.0 - posY / canvas.height
     pointer.deltaX = correctDeltaX(pointer.texcoordX - pointer.prevTexcoordX)
     pointer.deltaY = correctDeltaY(pointer.texcoordY - pointer.prevTexcoordY)
-    if (config.TRIGGER === 'hover') {
-      pointer.moved = Math.abs(pointer.deltaX) > 0 || Math.abs(pointer.deltaY) > 0
-    }
   }
 
   function updatePointerUpData(pointer) {
