@@ -1188,6 +1188,11 @@ export default function (el, config) {
     pointers.forEach((p) => {
       if (p.moved) {
         p.moved = false
+        if (p.deltaX === 0 && p.deltaY === 0) {
+          for (let i = 0; i < 4; i++) {
+            splatPointer(p)
+          }
+        }
         splatPointer(p)
       }
     })
