@@ -1577,11 +1577,11 @@ export default function (el, config) {
   }
 
   function generateColor() {
-    const c = HSVtoRGB(Math.random(), 1.0, 1.0)
-    c.r *= 0.15
-    c.g *= 0.15
-    c.b *= 0.15
-    return c
+    return {
+      r: 0.3,
+      g: 0.3,
+      b: 0.3,
+    }
   }
 
   function HSVtoRGB(h, s, v) {
